@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* Certificates page - match main site: dark background, Poppins font, accent color */
+*{box-sizing:border-box}
+html{font-size:62.5%}
+body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(180deg,#060606,#0b0b0b);color:#f2f2f2;min-height:100vh}
+
+/* Header that matches the main site's look */
+header{margin-top:20px;position:fixed;top:0;left:0;width:100%;padding:1rem 9%;background:transparent;display:flex;align-items:center;z-index:100}
+.logo{font-size:2.6rem;color:#b74b4b;font-weight:800;cursor:pointer;transition:transform .18s}
+.logo:hover{transform:scale(1.05)}
+nav{margin-left:auto;display:flex;gap:2.4rem;align-items:center}
+nav a{color:#fff;text-decoration:none;font-size:1.6rem;padding:6px 8px;border-radius:6px;transition:all .18s}
+nav a:hover,nav a.active{color:#b74b4b;border-bottom:3px solid #b74b4b}
+@media(max-width:995px){
+  nav{position:absolute;display:none;top:0;right:0;width:40%;background:#161616;border-left:3px solid #b74b4b;border-bottom:3px solid #b74b4b;border-bottom-left-radius:2rem;padding:1rem}
+  nav.active{display:block}
+  nav a{display:block;font-size:2rem;margin:2.4rem 0}
+  nav a:hover,nav a.active{padding:1rem;border-radius:.6rem;background:#b74b4b;color:#000}
+}
+
+/* container spacing to avoid overlap with fixed header */
+.container{max-width:1100px;margin:0 auto;padding:120px 20px 80px}
+
+.section-header{text-align:center;margin-bottom:28px}
+.section-header h2{font-size:3.2rem;margin:0;color:#fff}
+.section-header p{color:#cfcfcf;margin-top:8px;font-size:1.4rem}
+
+/* certificates grid: 3 columns on wide screens */
+.certificates-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:22px}
+.cert-card{position:relative;overflow:hidden;border-radius:12px;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,0.02),#b74b4b,#ff8a8a);border:1px solid rgba(183,75,75,0.06);box-shadow:0 10px 30px rgba(0,0,0,0.6);transition:transform .22s ease,box-shadow .22s ease}
+.cert-card::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:6px;border-radius:6px;background:linear-gradient(180deg,255,255,255,0.01);}
+.cert-card h3{margin:0 0 8px 18px;font-size:1.6rem;color:#fff;font-weight:600}
+.cert-meta{margin:0 0 0 18px;color:#cfcfcf;font-size:1.3rem}
+.cert-card small{display:block;margin-left:18px;color:#bfbfbf;margin-top:8px}
+.cert-card:hover{transform:translateY(-8px);box-shadow:0 18px 48px rgba(0,0,0,0.75)}
+
+/* responsive adjustments */
+@media (max-width:1100px){
+  .certificates-grid{grid-template-columns:repeat(2,1fr)}
+  .container{padding-top:130px}
+}
+
+@media (max-width:700px){
+  .certificates-grid{grid-template-columns:1fr}
+  .container{padding-top:110px}
+  nav{gap:14px}
+  .section-header h2{font-size:2.4rem}
+}
+
+@media (max-width:420px){
+  .logo{font-size:2.2rem}
+  nav a{font-size:1.4rem}
+  .section-header p{font-size:1.2rem}
+}
